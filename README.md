@@ -11,7 +11,7 @@
 02 | [Linked List](Linked_List/)
 03 | [Stack](Stack/)
 04 | [Queue](Queue/)
-05 | [Deck](Deck/)
+05 | [Deque](Deque/)
 06 | [Stack Uses(수식의 괄호 쌍)](Stack_Uses/)
 07 | [BFS](BFS/)
 08 | [DFS](DFS/)
