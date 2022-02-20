@@ -1,25 +1,29 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
-long long recursive(long long a, long long b, long long c) {
-  if (b == 1) return a % c;
+void hanoi(int start, int end, int num) {
+  if (num == 1) {
+    cout << start << " " << end << "\n";
+    return;
+  }
 
-  long long value = recursive(a, b / 2, c);
-  value = (value * value) % c;
-  
-  if (b % 2 == 0) return value;
-  else return (value * a) % c;
+  hanoi(start, 6 - start - end, num - 1);
+  cout << start << " " << end << "\n";
+  hanoi(6 - start - end, end, num - 1);
 }
 
 int main() {
   ios::sync_with_stdio(0);
   cin.tie(0);
-  long long a, b, c;
-  cin >> a >> b >> c;
 
-  cout << recursive(a, b, c);
+  int num;
+  cin >> num;
+
+  cout << static_cast<int>(pow(2, num)) - 1 << "\n";
+  hanoi(1, 3, num);
 
   return 0;
 }
